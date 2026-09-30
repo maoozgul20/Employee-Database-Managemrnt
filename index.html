@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- =========================================================
+     index.html — Add Employee form (INSERT)
+     Sends data to: insert.php
+     ========================================================= -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Employee | EmployeeDB</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      EmployeeDB
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="active" aria-current="page">Add</a>
+      <a href="SelectAll.php">View All</a>
+      <a href="SearchRecord.html">Search</a>
+      <a href="UpdateRecord.html">Update</a>
+      <a href="DeleteRecord.html">Delete</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container container-narrow">
+  <section class="card animate-in">
+
+    <div class="card-head">
+      <div class="card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+      </div>
+      <div>
+        <h1>Add Employee</h1>
+        <p>Fill in the details to add a new record.</p>
+      </div>
+    </div>
+
+    <form class="card-body" action="insert.php" method="POST" novalidate>
+
+      <div class="form-group">
+        <label for="empID">Employee ID <span class="req">*</span></label>
+        <input type="text" id="empID" name="empID" class="form-control" placeholder="e.g. 103"
+               inputmode="numeric" autocomplete="off" aria-describedby="hint-empID err-empID" autofocus>
+        <small class="hint" id="hint-empID">A unique positive number.</small>
+        <small class="error" id="err-empID" aria-live="polite"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="empName">Full Name <span class="req">*</span></label>
+        <input type="text" id="empName" name="empName" class="form-control" placeholder="e.g. Kashif Khan"
+               maxlength="50" autocomplete="off" aria-describedby="hint-empName err-empName">
+        <small class="hint" id="hint-empName">Letters, spaces, dots or apostrophes (2 to 50 characters).</small>
+        <small class="error" id="err-empName" aria-live="polite"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="Department">Department <span class="req">*</span></label>
+        <input type="text" id="Department" name="Department" class="form-control" placeholder="e.g. IT"
+               maxlength="50" autocomplete="off" aria-describedby="hint-Department err-Department">
+        <small class="hint" id="hint-Department">For example: IT, HR, Finance, R&amp;D.</small>
+        <small class="error" id="err-Department" aria-live="polite"></small>
+      </div>
+
+      <div class="form-group">
+        <label for="empSalary">Monthly Salary <span class="req">*</span></label>
+        <div class="input-wrap has-prefix">
+          <span class="input-prefix">Rs</span>
+          <input type="text" id="empSalary" name="empSalary" class="form-control" placeholder="e.g. 50000"
+                 inputmode="decimal" autocomplete="off" aria-describedby="hint-empSalary err-empSalary">
+        </div>
+        <small class="hint" id="hint-empSalary">Up to 2 decimal places.</small>
+        <small class="error" id="err-empSalary" aria-live="polite"></small>
+      </div>
+
+      <div class="form-actions">
+        <button type="reset" class="btn btn-ghost">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-block">Save Employee</button>
+      </div>
+
+    </form>
+  </section>
+</main>
+
+<footer class="footer">Web Engineering II &middot; PHP &amp; MySQL CRUD Project</footer>
+
+<script src="assets/js/validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- =========================================================
+     UpdateRecord.html — Update step 1: ask for the ID (UPDATE)
+     Sends data to: UpdateRecord.php
+     ========================================================= -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Employee | EmployeeDB</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+      EmployeeDB
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Add</a>
+      <a href="SelectAll.php">View All</a>
+      <a href="SearchRecord.html">Search</a>
+      <a href="UpdateRecord.html" class="active" aria-current="page">Update</a>
+      <a href="DeleteRecord.html">Delete</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container container-narrow">
+  <section class="card animate-in">
+
+    <div class="card-head">
+      <div class="card-icon warning">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      </div>
+      <div>
+        <h1>Update Employee</h1>
+        <p>Step 1 of 2: enter the ID of the employee to edit.</p>
+      </div>
+    </div>
+
+    <form class="card-body" action="UpdateRecord.php" method="POST" novalidate>
+
+      <div class="form-group">
+        <label for="empID">Employee ID <span class="req">*</span></label>
+        <input type="text" id="empID" name="empID" class="form-control" placeholder="e.g. 103"
+               inputmode="numeric" autocomplete="off" aria-describedby="hint-empID err-empID" autofocus>
+        <small class="hint" id="hint-empID">Enter the numeric ID of the employee.</small>
+        <small class="error" id="err-empID" aria-live="polite"></small>
+      </div>
+
+      <div class="form-actions">
+        <button type="reset" class="btn btn-ghost">Cancel</button>
+        <button type="submit" class="btn btn-primary btn-block">Find Employee</button>
+      </div>
+
+    </form>
+  </section>
+
+  <p class="card-links">Not sure of the ID? <a href="SelectAll.php">View all employees</a></p>
+</main>
+
+<footer class="footer">Web Engineering II &middot; PHP &amp; MySQL CRUD Project</footer>
+
+<script src="assets/js/validation.js"></script>
+</body>
+</html>
